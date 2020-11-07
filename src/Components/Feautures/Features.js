@@ -12,7 +12,7 @@ export const Section = styled.div`
   padding: 0px;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 50px;
+  margin-top: 20px;
   @media (min-width: 991px) {
     width: 92%;
     padding-left: 2.3vw;
