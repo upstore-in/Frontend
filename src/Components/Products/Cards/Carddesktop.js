@@ -6,11 +6,13 @@ import Addtowishlist from '../../Buttons/Addtowishlist';
 import API from '../../../backend';
 // import { buildQueries } from '@testing-library/react';
 import classes from './SomeCardClasses.module.css';
+import { appContext } from '../../../Statemanagement/Statecontext';
 //eslint-disable-next-line
 
 const Productcard = props => {
   const { product } = props;
-  const { name, photos, markedPrice, price, _id, shopName, variants, open, stock } = product;
+
+  const { name, photos, markedPrice, price, _id, shopName, variants, open, stock, shopId } = product;
 
   const src = photos[0].substr(6);
 
@@ -58,7 +60,7 @@ const Productcard = props => {
             WISHLIST
           </Addtowishlist>
 
-          <Addtocart classes="m-2 btn btn-primary" stock={stock} closed={classes.closed} id={_id} open={open}>
+          <Addtocart classes="m-2 btn btn-primary" stock={stock} closed={classes.closed} id={_id} shopId={shopId} open={open}>
             ADD TO CART
           </Addtocart>
         </div>

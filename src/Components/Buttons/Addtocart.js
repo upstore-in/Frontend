@@ -9,20 +9,21 @@ const Addtocart = props => {
   const { state } = useContext(appContext);
   const dispatch = useContext(dispatchContext);
   const { cart } = state;
+
   const [show, setShow] = useState(false);
 
   if (state.loggedIn) {
     const { token, user } = isAutheticated();
     const { _id } = user;
-    const addToCart = id => {
+
+    const addToCart = (id, shopId) => {
       let filteredCart = cart.filter(item => item.product._id === id);
       if (filteredCart.length === 1) {
         setShow(true);
         setTimeout(function () {
           setShow(false);
         }, 2000);
-      }
-      if (filteredCart.length === 0) {
+      } else {
         dispatch({ type: 'LOADING' });
         fetch(`${API}/api/user/addToCart/${_id}`, {
           method: 'POST',
@@ -60,10 +61,11 @@ const Addtocart = props => {
             <button
               className={props.classes}
               onClick={() => {
-                addToCart(props.id);
+                addToCart(props.id, props.shopId);
               }}
             >
               {show && <MySnackbar vertical={'top'} horizontal={'center'} message={'Already exists in cart'} />}
+
               {props.children}
             </button>
           ) : (
