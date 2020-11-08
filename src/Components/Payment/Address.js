@@ -223,7 +223,7 @@ const SelectAddress = props => {
                   }}
                 >
                   <FormHeader>Address</FormHeader>
-                  {addAddressForm()}
+                  <div style={{ height: '400px' }}>{addAddressForm()}</div>
                   {width > 991 && (
                     <div style={{ marginTop: '8vh' }}>
                       <Button
@@ -244,7 +244,8 @@ const SelectAddress = props => {
                       bottom: '0',
                       left: '0',
                       width: '100%',
-                      padding: '31px 10px',
+                      backgroundColor: 'white',
+                      padding: '21px 5px',
                       boxShadow: '0px 0px 4px 1px rgba(97,97,97,0.24)'
                     }}
                   >
