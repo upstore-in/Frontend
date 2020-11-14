@@ -67,9 +67,6 @@ const Home = () => {
           <Link to={'/shops/5fa3f3cce7b70f048762d4a4/5eff8e76d75ecb3735b243b1'}>
             <DiwaliImg src="https://upstore.in/images/2020-11-08T18:45:30.866Z-Diwali Foods.png" alt="" />
           </Link>
-          <Link to="/shops/5fa675f5e7b70f048762d4d6/5eff8e76d75ecb3735b243b1">
-            <DiwaliImg src="https://upstore.in/images/2020-11-07T08:54:16.889Z-Diwali%20Fireworks.png" alt="" />
-          </Link>
         </DiwaliDiv>
       </Section>
 
